@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Random Word Generator</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="icon" type="image/x-icon" href="/favicon.ico">
+</head>
+<body>
+
+  <button id="darkModeToggle" title="Toggle Dark Mode">🌙 Dark Mode</button>
+
+  <nav>
+    <button data-type="nouns" class="active" title="Get a random noun">Nouns</button>
+    <button data-type="verbs" title="Get a random verb">Verbs</button>
+    <button data-type="names" title="Get a random name">Names</button>
+    <button data-type="sentences" title="Get a random sentence">Sentences</button>
+    <button data-type="number" title="Get a random number">Number</button>
+    <button data-type="alphabet" title="Get a random letter">Alphabet</button>
+    <button data-type="custom" title="Use your own words">Custom</button>
+  </nav>
+
+  <main>
+    <h1>Random Word Generator</h1>
+
+    <div id="wordDisplay" aria-live="polite">Click a category to generate!</div>
+    <div id="meaningDisplay" aria-live="polite"></div>
+
+    <button id="retryBtn" title="Try again">🔄 Retry</button>
+
+    <div id="customInputArea" aria-label="Custom word input area">
+      <textarea id="customWords" placeholder="Enter words or phrases, separated by commas..." aria-label="Custom words input"></textarea>
+      <button id="customSubmit" aria-label="Generate word from custom list">Generate from Custom List</button>
+    </div>
+
+    <div id="actionButtons">
+      <button id="saveFavBtn" class="action-btn" title="Save to favorites" disabled>
+        ⭐ Save Favorite
+      </button>
+      <button id="shareBtn" class="action-btn" title="Share on social media" disabled>
+        📤 Share
+      </button>
+      <button id="showFavBtn" class="action-btn" title="Show favorites">
+        📚 Favorites
+      </button>
+    </div>
+  </main>
+
+  <div id="loader" style="display:none;" class="loader" aria-hidden="true"></div>
+
+
+  <div id="favoritesModal" role="dialog" aria-modal="true" aria-labelledby="favTitle" tabindex="-1">
+    <div id="favoritesContent">
+      <h2 id="favTitle">Your Favorites</h2>
+      <ul id="favoritesList">
+        <li>No favorites saved yet.</li>
+      </ul>
+      <button id="closeFavBtn" aria-label="Close favorites">Close</button>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+
+</body>
+</html>
